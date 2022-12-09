@@ -134,10 +134,23 @@ function generationProcess() {
             },
             {
                 type: "input",
+                name: "engineerID",
+                message: "What is your engineer's ID?",
+                validate: (answer) => {
+                    const pass = answer.match(/^[1-9]\d*$/);
+                    if (pass) {
+                        return true;
+                    } else {
+                        return "Please enter a postive number that is greater than 0";
+                    };
+                },
+            },
+            {
+                type: "input",
                 name: "engineerEmail",
                 message: "What is your engineer's email address?",
                 validate: (answer) => {
-                    const pass = answer.match(/\S+@\S+\.\S+/)
+                    const pass = answer.match(/\S+@\S+\.\S+/);
                     if (pass) {
                         return true;
                     } else {
@@ -158,7 +171,18 @@ function generationProcess() {
                 },
             },
         ])
-
+        .then((answers) => {
+            const engineer = new Engineer (
+                answers.engineerName,
+                answers.engineerID,
+                answers.engineerEmail,
+                answers.engineerGithub
+            );
+            teamMembers.push(engineer);
+            idArray.push(answers.engineerID);
+            // route back to team options and once they're finished adding they select 'none' to finish the process.
+            createTeamOptions();
+        });
     }
 
 
@@ -173,6 +197,19 @@ function generationProcess() {
                         return true;
                     } else {
                         return "Please enter at least one character";
+                    };
+                },
+            },
+            {
+                type: "input",
+                name: "internID",
+                message: "What is your intern's ID",
+                validate: (answer) => {
+                    const pass = answer.match(/^[1-9]\d*$/);
+                    if (pass) {
+                        return true;
+                    } else {
+                        return "Please enter a postive number that is greater than 0";
                     };
                 },
             },
@@ -202,8 +239,18 @@ function generationProcess() {
                 },
             },
         ])
-        
-    }
+        .then((answers) => {
+            const intern = new Intern (
+                answers.internName,
+                answers.internID,
+                answers.internEmail,
+                answers.internSchool
+            );
+            teamMembers.push(intern);
+            idArray.push(answers.internID);
+            createTeamOptions();
+        });
+    };
 
 
     function finishBuild() {
