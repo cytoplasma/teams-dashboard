@@ -16,6 +16,7 @@ const idArray = [];
 console.log('\nWelcome to the Team Dashboard Generator!\n');
 
 function generationProcess() {
+    // function objective: there is only one manager, so condense 
     function createManager() {
         console.log("Time to build your team dashboard!");
         inquirer.prompt([
@@ -87,9 +88,36 @@ function generationProcess() {
             createTeamOptions();
         });
     }
-    function createTeamOptions() {
 
+// function objective: userchoice allows for selection & will lead straight into the function of their desired selection
+    function createTeamOptions() {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "memberChoice",
+                message: "What kind of member do you want to add to your team?",
+                choices: [
+                    "Engineer",
+                    "Intern",
+                    "None",
+                ],
+            },
+        ])
+        .then((userChoice) => {
+            switch (userChoice.memberChoice) {
+                case "Engineer":
+                    addEngineer();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+                default: finishBuild();
+            }
+        });
     }
+
+
+
     function addEngineer() {
 
     }
