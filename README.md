@@ -30,8 +30,12 @@
   ``` 
 
   ## Usage 
-
   
+  To use this web application, you need to clone it into your own local repo, install the required dependencies, and being the command line app by typing 'node index.js' into the terminal. You will be prompted and led through a series of questions to create your custom employee cards. Once finished, it will be generate onto the html code in the "dist" folder.
+
+  For more information on usage, please refer to the video link below on a walkthrough of it's usage.
+  
+  [Video Usage](https://drive.google.com/file/d/1QdyVqiBqrEXOojhV8l0m4BEhv-PkR8Es/view)
 
   ## License 
 
