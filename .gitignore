@@ -1,0 +1,6 @@
+#node dependency modules
+node_modules/
+
+
+#MACOS
+DS_Store

@@ -1,0 +1,24 @@
+{
+  "name": "teams-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cytoplasma/teams-dashboard.git"
+  },
+  "author": "Jeremiah Piromgraipakd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cytoplasma/teams-dashboard/issues"
+  },
+  "homepage": "https://github.com/cytoplasma/teams-dashboard#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.3.1"
+  }
+}
