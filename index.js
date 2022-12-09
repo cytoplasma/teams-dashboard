@@ -172,7 +172,7 @@ function generationProcess() {
             },
         ])
         .then((answers) => {
-            const engineer = new Engineer (
+            const engineer = new Engineer(
                 answers.engineerName,
                 answers.engineerID,
                 answers.engineerEmail,
@@ -240,7 +240,7 @@ function generationProcess() {
             },
         ])
         .then((answers) => {
-            const intern = new Intern (
+            const intern = new Intern(
                 answers.internName,
                 answers.internID,
                 answers.internEmail,
