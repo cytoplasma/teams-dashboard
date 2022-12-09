@@ -10,13 +10,14 @@ const distPath = path.join(DIST_DIR, "team.html");
 
 const render = require('./src/page-template.js');
 
-const teamMember = [];
+const teamMembers = [];
 const idArray = [];
 
 console.log('\nWelcome to the Team Dashboard Generator!\n');
 
 function generationProcess() {
     function createManager() {
+        console.log("Time to build your team dashboard!");
         inquirer.prompt([
             {
                 type: "input",
@@ -70,6 +71,21 @@ function generationProcess() {
                 },
             },
         ])
+        .then((answers) => {
+            // make new manager variable from the input results
+            const manager = new Manager(
+                answers.managerName,
+                answers.managerID,
+                answers.managerEmail,
+                answers.managerOfficeNumber
+            );
+            // push new contents into preset array
+            teamMembers.push(manager);
+            // push ID into array
+            idArray.push(answers.managerID);
+            // move onto next function
+            createTeamOptions();
+        });
     }
     function createTeamOptions() {
 
