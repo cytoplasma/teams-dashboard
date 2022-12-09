@@ -119,17 +119,101 @@ function generationProcess() {
 
 
     function addEngineer() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "What is your engineer's name?",
+                validate: (answer) => {
+                    if (answer !== '') {
+                        return true;
+                    } else {
+                        return "Please enter at least one character";
+                    };
+                },
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "What is your engineer's email address?",
+                validate: (answer) => {
+                    const pass = answer.match(/\S+@\S+\.\S+/)
+                    if (pass) {
+                        return true;
+                    } else {
+                        return "Please enter a valid email address.";
+                    };
+                },
+            },
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "What is your engineer's GitHub username?",
+                validate: (answer) => {
+                    if (answer !== '') {
+                        return true;
+                    } else {
+                        return "Please enter at least one character";
+                    };
+                },
+            },
+        ])
 
     }
+
+
     function addIntern() {
-
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "internName",
+                message: "What is your intern's name",
+                validate: (answer) => {
+                    if (answer !== '') {
+                        return true;
+                    } else {
+                        return "Please enter at least one character";
+                    };
+                },
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "What is your intern's email address?",
+                validate: (answer) => {
+                    const pass = answer.match(/\S+@\S+\.\S+/);
+                    if (pass) {
+                        return true;
+                    } else {
+                        return "Please enter a valid email address";
+                    };
+                },
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "What is your intern's university name?",
+                validate: (answer) => {
+                    if (answer !== '') {
+                        return true;
+                    } else {
+                        return "Please enter at least one character";
+                    };
+                },
+            },
+        ])
+        
     }
+
+
     function finishBuild() {
+        inquirer.prompt([
 
+        ])
     }
+
+
     createManager();
-
-
 }
 
 generationProcess();
