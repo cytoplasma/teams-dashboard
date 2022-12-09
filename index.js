@@ -11,3 +11,29 @@ const distPath = path.join(DIST_DIR, "team.html");
 const render = require('./src/page-template.js');
 
 const teamMember = [];
+const idArray = [];
+
+console.log('\nWelcome to the Team Dashboard Generator!\n');
+
+function generationProcess() {
+    function createManager() {
+
+    }
+    function createTeamOptions() {
+
+    }
+    function addEngineer() {
+
+    }
+    function addIntern() {
+
+    }
+    function finishBuild() {
+
+    }
+    createManager();
+
+
+}
+
+generationProcess();
